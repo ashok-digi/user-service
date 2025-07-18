@@ -16,6 +16,10 @@ app.use(express.json())
 app.use(requestLogger)
 app.use(metricsMiddleware)
 
+app.use("/", (req, res)=>{
+        res.send("CI CD Demo project")
+})
+
 app.use("/api/users", userRoutes)
 
 app.use("/metrics", metricsEndpoint)
